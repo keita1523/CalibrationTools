@@ -28,7 +28,7 @@ from sensor_calibration_manager.types import FramePair
     project_name="xx1", calibrator_name="tag_based_pnp_calibrator"
 )
 class TagBasedPNPCalibrator(CalibratorBase):
-    required_frames = ["sensor_kit_base_link", "velodyne_top_base_link", "velodyne_top"]
+    required_frames = ["sensor_kit_base_link", "hesai_top_base_link", "hesai_top"]
 
     def __init__(self, ros_interface: RosInterface, **kwargs):
         super().__init__(ros_interface)
@@ -40,16 +40,16 @@ class TagBasedPNPCalibrator(CalibratorBase):
         self.add_calibrator(
             service_name="calibrate_camera_lidar",
             expected_calibration_frames=[
-                FramePair(parent=f"{self.camera_name}/camera_optical_link", child="velodyne_top"),
+                FramePair(parent=f"{self.camera_name}/camera_optical_link", child="hesai_top"),
             ],
         )
 
     def post_process(self, calibration_transforms: Dict[str, Dict[str, np.array]]):
         optical_link_to_lidar_transform = calibration_transforms[
             f"{self.camera_name}/camera_optical_link"
-        ]["velodyne_top"]
+        ]["hesai_top"]
         sensor_kit_to_lidar_transform = self.get_transform_matrix(
-            "sensor_kit_base_link", "velodyne_top"
+            "sensor_kit_base_link", "hesai_top"
         )
         camera_to_optical_link_transform = self.get_transform_matrix(
             f"{self.camera_name}/camera_link", f"{self.camera_name}/camera_optical_link"

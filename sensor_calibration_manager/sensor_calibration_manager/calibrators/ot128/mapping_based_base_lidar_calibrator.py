@@ -36,7 +36,7 @@ class MappingBasedBaseLidarCalibrator(CalibratorBase):
         self.base_frame = "base_link"
         self.sensor_kit_frame = "sensor_kit_base_link"
 
-        self.mapping_lidar_frame = "velodyne_top"
+        self.mapping_lidar_frame = "hesai_top"
 
         self.required_frames.extend(
             [self.base_frame, self.sensor_kit_frame, self.mapping_lidar_frame]

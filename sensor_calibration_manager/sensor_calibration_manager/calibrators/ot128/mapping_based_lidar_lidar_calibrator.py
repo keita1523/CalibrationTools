@@ -34,9 +34,9 @@ class MappingBasedLidarLidarCalibrator(CalibratorBase):
         super().__init__(ros_interface)
 
         self.sensor_kit_frame = "sensor_kit_base_link"
-        self.mapping_lidar_frame = "velodyne_top"
-        self.calibration_lidar_frames = ["velodyne_left", "velodyne_right"]
-        self.calibration_base_lidar_frames = ["velodyne_left_base_link", "velodyne_right_base_link"]
+        self.mapping_lidar_frame = "hesai_top"
+        self.calibration_lidar_frames = ["hesai_left", "hesai_right"]
+        self.calibration_base_lidar_frames = ["hesai_left_base_link", "hesai_right_base_link"]
 
         self.required_frames.extend(
             [

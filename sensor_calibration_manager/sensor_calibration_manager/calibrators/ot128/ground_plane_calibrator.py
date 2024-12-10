@@ -35,7 +35,7 @@ class GroundPlaneCalibrator(CalibratorBase):
 
         self.base_frame = "base_link"
         self.sensor_kit_frame = "sensor_kit_base_link"
-        self.lidar_frame = "velodyne_top"
+        self.lidar_frame = "hesai_top"
 
         self.required_frames.extend([self.base_frame, self.sensor_kit_frame, self.lidar_frame])
 
