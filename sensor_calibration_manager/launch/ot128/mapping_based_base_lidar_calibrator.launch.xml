@@ -26,7 +26,7 @@
 
   <let name="calibration_lidar_frames" value="['']"/>
 
-  <let name="mapping_lidar_frame" value="velodyne_top"/>
+  <let name="mapping_lidar_frame" value="hesai_top"/>
   <let name="mapping_pointcloud" value="/sensing/lidar/top/pointcloud"/>
   <let name="detected_objects" value="/perception/object_recognition/detection/objects"/>
 

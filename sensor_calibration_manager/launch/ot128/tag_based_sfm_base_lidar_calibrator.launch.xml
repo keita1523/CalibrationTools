@@ -9,10 +9,10 @@
 
   <!-- Frame configuration -->
   <let name="base_frame" value="base_link"/>
-  <let name="main_calibration_sensor_frame" value="velodyne_top"/>
+  <let name="main_calibration_sensor_frame" value="hesai_top"/>
 
   <!-- Lidar configuration -->
-  <let name="calibration_lidar_model" value="velodyne_vls128"/>
+  <let name="calibration_lidar_model" value="hesai_vls128"/>
 
   <!-- Topic configuration -->
   <let name="calibration_lidar_topic" value="/sensing/lidar/top/pointcloud_raw"/>
