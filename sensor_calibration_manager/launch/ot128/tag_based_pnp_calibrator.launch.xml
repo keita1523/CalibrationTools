@@ -10,7 +10,7 @@
     <choice value="camera7"/>
   </arg>
 
-  <arg name="view_only_ui" default="true" description="By default we use a minimal UI"/>
+  <arg name="view_only_ui" default="false" description="By default we use a minimal UI"/>
   <arg name="calibration_pairs" default="9" description="Number of lidar-image pairs for the calibration to converge"/>
   <arg name="calibration_pairs_min_distance" default="1.5" description="Minimum allowed between a new detection and current pairs"/>
 
@@ -23,13 +23,14 @@
 
   <let name="camera_frame" value="$(var camera_name)/camera_link"/>
   <let name="rviz_profile" value="$(find-pkg-share tag_based_pnp_calibrator)/rviz/default_profile.rviz"/>
-  <let name="lidar_model" value="velodyne_vls128"/>
+  <!-- <let name="lidar_model" value="velodyne_vls128"/> -->
+  <let name="lidar_model" value="ot128"/>
   <let name="lidar_frame" value="hesai_top"/>
   <let name="use_rectified_image" value="true"/>
 
   <group>
     <!-- image decompressor -->
-    <node pkg="autoware_image_transport_decompressor" exec="image_transport_decompressor_node" name="decompressor" output="screen">
+    <node pkg="image_transport_decompressor" exec="image_transport_decompressor_node" name="decompressor" output="screen">
       <remap from="decompressor/input/compressed_image" to="$(var image_compressed_topic)"/>
       <remap from="decompressor/output/raw_image" to="$(var image_decompressed_topic)"/>
 

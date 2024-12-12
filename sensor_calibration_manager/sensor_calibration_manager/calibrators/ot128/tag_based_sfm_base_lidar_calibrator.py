@@ -25,7 +25,7 @@ from sensor_calibration_manager.types import FramePair
 
 
 @CalibratorRegistry.register_calibrator(
-    project_name="xx1", calibrator_name="tag_based_sfm_base_lidar_calibrator"
+    project_name="ot128", calibrator_name="tag_based_sfm_base_lidar_calibrator"
 )
 class TagBasedSfmBaseLidarCalibrator(CalibratorBase):
     required_frames = []
